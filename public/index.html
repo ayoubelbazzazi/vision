@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output-style.css" />
+    <title>Web Design 1</title>
+    <script
+      src="https://kit.fontawesome.com/c6c209c8da.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"
+      defer
+    ></script>
+    <script type="module" src="./script.js" defer></script>
+  </head>
+  <body
+    class="bg-black text-white p-2 xl:px-[50px] 2xl:px-[200px] scrollbar-thin scrollbar-thumb-white opacity-0"
+  >
+    <div class="smooth-scroll-wrapper">
+      <nav class="h-[250px] w-full flex items-center justify-center">
+        <h3 class="flex flex-col text-[29px] lg:text-[40px] name">
+          <span>Ayoub</span>
+          <span class="transform -translate-y-4">El Bazzazi</span>
+        </h3>
+      </nav>
+      <header>
+        <div class="flex flex-col items-center gap-2 lg:grid lg:grid-cols-2">
+          <div
+            id="to-overview"
+            class="h-[400px] lg:[300px] w-full bg-blue rounded-[50px] p-8 flex flex-col justify-between shape-container relative overflow-hidden cursor-pointer"
+          >
+            <div
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 flex text-6xl font-semibold capitalize z-10 marquee-container"
+            >
+              <p class="whitespace-nowrap marquee1 mr-[30px]">
+                Let's create the best digital experience!
+              </p>
+              <p class="whitespace-nowrap marquee1">
+                Let's create the best digital experience!
+              </p>
+            </div>
+            <div class="heading flex justify-between items-center">
+              <h4 class="text-xl font-semibold">Ayoub El Bazzazi</h4>
+              <div
+                class="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full bg-white"
+              ></div>
+            </div>
+            <div class="main project-title flex items-center justify-center">
+              <div class="w-[160px] h-[160px] rounded-full relative circle">
+                <div
+                  class="absolute top-1/2 left-1/2 w-[65px] h-[65px] bg-lightpurple shape lg:w-[75px] lg:h-[75px]"
+                ></div>
+                <div
+                  class="absolute top-1/2 left-1/2 w-[75px] h-[75px] rounded-full bg-lightpurple shape lg:w-[85px] lg:h-[85px]"
+                ></div>
+                <div
+                  class="absolute top-1/2 left-1/2 w-[70px] h-[70px] bg-lightpurple triangle shape lg:w-[80px] lg:h-[80px]"
+                ></div>
+              </div>
+            </div>
+            <div class="footer flex justify-between items-center text-lg">
+              <p class="text-lg font-semibold">See our services</p>
+              <i class="fa-solid fa-arrow-down"></i>
+            </div>
+          </div>
+          <div
+            class="w-full h-[300px] lg:h-full grid grid-rows-2 grid-cols-2 gap-0 rectangle-container"
+          >
+            <div
+              id="to-work"
+              class="rectangle w-full h-full pb-2 cursor-pointer"
+            >
+              <div
+                class="bg-white w-full h-full rounded-[50px] flex flex-col text-black p-8 md:p-9 relative overflow-hidden sub-rectangle"
+              >
+                <div
+                  class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex"
+                >
+                  <p class="mr-[30px] marquee21 opacity-0">
+                    Check out my showcase.
+                  </p>
+                  <p class="marquee21 opacity-0">Check out my showcase.</p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-auto font-semibold elements1"
+                >
+                  <span class="lg:text-lg">Work</span>
+                  <i class="fa-solid fa-code lg:text-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              id="to-about"
+              class="rectangle w-full h-full pb-2 overflow-hidden cursor-pointer"
+            >
+              <div
+                class="bg-darkgrey rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 relative overflow-hidden h-full"
+              >
+                <div
+                  class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex"
+                >
+                  <p class="mr-[30px] marquee22 opacity-0">
+                    learn more about me.
+                  </p>
+                  <p class="marquee22 opacity-0 mr-[30px]">
+                    learn more about me.
+                  </p>
+                  <p class="marquee22 opacity-0">learn more about me.</p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-auto font-semibold elements2"
+                >
+                  <span class="lg:text-lg">About me</span>
+                  <i class="fa-regular fa-address-card lg:text-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div
+              id="to-contact"
+              class="w-full h-full rectangle col-start-1 col-end-3 overflow-hidden cursor-pointer"
+            >
+              <div
+                class="bg-yellow h-full rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 text-black border-black border border-solid border-b-8 overflow-hidden relative"
+              >
+                <div
+                  class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex"
+                >
+                  <p class="mr-[30px] marquee23 opacity-0">
+                    Get in touch! Let's talk business.
+                  </p>
+                  <p class="marquee23 opacity-0 mr-[30px]">
+                    Get in touch! Let's talk business.
+                  </p>
+                  <p class="marquee23 opacity-0">
+                    Get in touch! Let's talk business.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center justify-between mt-auto font-semibold elements3"
+                >
+                  <span class="lg:text-lg">Contact me</span>
+                  <i class="fa-regular fa-comment-dots lg:text-lg"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="mb-2">
+        <div
+          id="overview"
+          class="w-full text-purple bg-darkgrey rounded-[50px] p-8 lg:p-10 lg:pb-20 mb-2"
+        >
+          <h4 class="text-xl mb-4">What I do</h4>
+          <div class="flex justify-between lg:gap-40">
+            <p class="paragraph text-2xl sm:text-4xl md:text-5xl lg:text-7xl">
+              I provide clients with stunning <i>Crafty</i> web solutions,
+              developed with skill and passion
+            </p>
+            <div class="flex">
+              <div
+                class="relative w-[100px] h-[100px] self-end hidden lg:block"
+              >
+                <div class="w-full h-full rounded-full words-circle"></div>
+                <i
+                  class="fa-solid fa-arrow-down absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skillset overflow-hidden">
+          <div class="relative">
+            <div
+              class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform translate-x-[100vw] lg:w-[50%] lg:text-lg lg:translate-x-[50%]"
+            >
+              <div>gg</div>
+              <div>
+                <h4 class="text-lg text-semibold mb-4">Webflow CMS</h4>
+                <p>
+                  We are focused on developing, from start to finish, web
+                  solutions with Webflow CMS, an easy to use content management
+                  system where admins can alter or add content to a website.
+                </p>
+              </div>
+            </div>
+            <div
+              class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center"
+            >
+              <span>We are experts in</span>
+              <span class="text-4xl font-semibold italic"
+                >Webflow CMS</span
+              >
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform translate-x-[100vw] lg:w-[50%] lg:text-lg lg:translate-x-[50%]"
+            >
+              <div>gg</div>
+              <div>
+                <h4 class="text-lg text-semibold mb-4">SEO</h4>
+                <p>
+                  Using our expertise along with handy tools we strive for a
+                  high SEO score, ensuring higher visibility on search sites
+                  such as Google.
+                </p>
+              </div>
+            </div>
+            <div
+              class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center"
+            >
+              <span>With our SEO knowledge</span>
+              <span class="text-4xl font-semibold italic"
+                >You will be seen</span
+              >
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform translate-x-[100vw] lg:w-[50%] lg:text-lg lg:translate-x-[50%]"
+            >
+              <div>GG</div>
+              <div>
+                <h4 class="text-lg text-semibold mb-4">Fast Support</h4>
+                <p>
+                  We aim to be as available and supportive as we can to our
+                  clients. Feel free to use the form below or contact us
+                  directly with questions or requests..
+                </p>
+              </div>
+            </div>
+            <div
+              class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center"
+            >
+              <span>We are always </span>
+              <span class="text-4xl font-semibold italic">Happy to help</span>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform translate-x-[100vw] lg:w-[50%] lg:text-lg lg:translate-x-[50%]"
+            >
+              <div>gg</div>
+              <div>
+                <h4 class="text-lg text-semibold mb-4">Custom Designs</h4>
+                <p>
+                  Our design team is skilled at customizing existing designs, as
+                  well as producing stunning, award-winning brand-new designs.
+                </p>
+              </div>
+            </div>
+            <div
+              class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center"
+            >
+              <span>In partnership with </span>
+              <span class="text-4xl font-semibold italic"
+                >Ayoub El Bazzazi</span
+              >
+            </div>
+          </div>
+        </div>
+        <div id="work" class="showcase grid grid-cols-2 grid-rows-3 gap-2 mb-2">
+          <div
+            class="h-[40vh] xs:h-[50vh] bg-white col-span-2 rounded-[50px] p-8 text-black flex flex-col justify-between project"
+          >
+            <div
+              class="heading flex items-center justify-between text-xl font-semibold"
+            >
+              <span>01.</span>
+              <span>Featured</span>
+            </div>
+            <div class="flex items-center justify-center">
+              <span class="self-center text-4xl font-semibold project-title"
+                >Project 1</span
+              >
+            </div>
+            <div
+              class="footing flex items-center justify-between text-xl font-semibold"
+            >
+              <span>Launch project</span>
+              <i
+                class="fa-solid fa-arrow-right transform text-xl -rotate-45"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="h-[40vh] xs:h-[50vh] bg-[tomato] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project"
+          >
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span>02.</span>
+              <span class="hidden xs:block">Showcase</span>
+            </div>
+            <div class="main project-title">
+              <span class="text-2xl font-semibold">Project 2</span>
+            </div>
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span class="hidden xs:block">Launch project</span>
+              <i
+                class="fa-solid fa-arrow-right transform text-xl -rotate-45"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="h-[40vh] xs:h-[50vh] bg-[yellowgreen] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project"
+          >
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span>03.</span>
+              <span class="hidden xs:block">Showcase</span>
+            </div>
+            <div class="main project-title">
+              <span class="text-2xl font-semibold">Project 3</span>
+            </div>
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span class="hidden xs:block">Launch projectr</span>
+              <i
+                class="fa-solid fa-arrow-right transform text-xl -rotate-45"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="h-[40vh] xs:h-[50vh] bg-[cyan] text-black rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project"
+          >
+            <div
+              class="heading xs:w-full font-semibold xs:flex items-center justify-between"
+            >
+              <span>04.</span>
+              <span class="hidden xs:block">Showcase</span>
+            </div>
+            <div class="main project-title">
+              <span class="text-2xl font-semibold">Project 4</span>
+            </div>
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span class="hidden xs:block">Launch projectr</span>
+              <i
+                class="fa-solid fa-arrow-right transform text-xl -rotate-45"
+              ></i>
+            </div>
+          </div>
+          <div
+            class="h-[40vh] xs:h-[50vh] bg-[magenta] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project"
+          >
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span>05.</span>
+              <span class="hidden xs:block">Showcase</span>
+            </div>
+            <div class="main project-title">
+              <span class="text-2xl font-semibold">Project 5</span>
+            </div>
+            <div
+              class="heading font-semibold xs:w-full xs:flex items-center justify-between"
+            >
+              <span class="hidden xs:block">Launch projectr</span>
+              <i
+                class="fa-solid fa-arrow-right transform text-xl -rotate-45"
+              ></i>
+            </div>
+          </div>
+        </div>
+        <div
+          id="about"
+          class="about max-h-[650px] lg:max-h-[800px] bg-[#1F1A1C] rounded-[50px] py-10 text-[#FFAED8] relative overflow-hidden mb-2"
+        >
+          <div
+            class="flex text-8xl lg:text-[140px] overflow-hidden mb-10 lg:mb-20"
+          >
+            <p class="whitespace-nowrap mr-[30px] marquee31">
+              Nice to meet you!
+            </p>
+            <p class="whitespace-nowrap mr-[30px] marquee31">
+              Nice to meet you!
+            </p>
+            <p class="whitespace-nowrap marquee31">Nice to meet you!</p>
+          </div>
+          <div
+            class="leading-6 sm:w-[60%] text-lg px-10 mb-32 lg:mb-32 md:text-2xl lg:text-3xl"
+          >
+            <p class="">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, vel.
+              Provident praesentium laudantium corporis reiciendis officiis,
+              dolorem quidem ex maxime optio aut, quisquam laborum omnis dolor
+              est, sunt nostrum itaque?
+            </p>
+          </div>
+          <div>
+            <div class="grid grid-rows-2 transform -rotate-[20deg]">
+              <div class="flex gap-4 row row-1 transform mb-4 text-9xl">
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] bg-pink text-darkgrey flex items-center justify-center"
+                >
+                  A
+                </div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] flex items-center justify-center"
+                >
+                  Y
+                </div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] flex items-center justify-center"
+                >
+                  O
+                </div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] flex items-center justify-center"
+                >
+                  U
+                </div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] flex items-center justify-center"
+                >
+                  B
+                </div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+              </div>
+              <div class="flex gap-4 row row-2 transform">
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+                <div
+                  class="w-[140px] h-[140px] border-solid border-2 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px]"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="contact"
+          class="contact bg-darkyellow text-yellow-2 p-10 rounded-[50px] mb-2"
+        >
+          <h4 class="mb-4 text-lg">Get in touch</h4>
+          <h3
+            class="text-4xl mb-12 xs:text-5xl md:text-6xl lg:text-7xl lg:w-[70%]"
+          >
+            Do you have a question, an idea, or a project you need help with?<br />Contact
+            me!
+          </h3>
+          <div class="flex justify-between">
+            <div class="w-full sm:w-[70%] md:w-[60%]">
+              <div
+                class="flex flex-col lg:flex-row items-center mb-12 lg:gap-6"
+              >
+                <button
+                  class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full mb-2 lg:mb-0 md:mb-4 font-semibold"
+                >
+                  info@bazzazi.com
+                </button>
+                <button
+                  class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full font-semibold"
+                >
+                  +212 683 85 28 32 94
+                </button>
+              </div>
+              <div class="flex items-center justify-between text-xl gap-2">
+                <button
+                  class="border-2 border-solid border-yellow-2 rounded-full w-full py-2"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </button>
+                <button
+                  class="border-2 border-solid border-yellow-2 rounded-full w-full py-2"
+                >
+                  <i class="fa-brands fa-instagram"></i>
+                </button>
+                <button
+                  class="border-2 border-solid border-yellow-2 rounded-full w-full py-2"
+                >
+                  <i class="fa-brands fa-linkedin"></i>
+                </button>
+              </div>
+            </div>
+            <div class="flex">
+              <div
+                class="relative w-[100px] h-[100px] self-end hidden lg:block"
+              >
+                <div class="w-full h-full rounded-full words-circle-2"></div>
+                <i
+                  class="fa-solid fa-arrow-down absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <form method="GET" class="w-full lg:flex justify-between gap-3">
+            <div class="lg:w-[70%]">
+              <div class="lg:grid grid-cols-3 lg:gap-3">
+                <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2">
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl"
+                  />
+                </div>
+                <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2">
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl"
+                  />
+                </div>
+                <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2">
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl"
+                  />
+                </div>
+              </div>
+              <div class="h-[400px] rounded-[50px] bg-darkyellow mb-2">
+                <textarea
+                  class="w-full h-full bg-transparent focus:outline-none text-yellow-2 p-10 font-semibold placeholder-yellow-2 placeholder:font-semibold lg:text-xl resize-none"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+            </div>
+            <button
+              class="w-full lg:w-[30%] h-[120px] lg:h-[500px] flex items-center justify-center text-darkyellow rounded-[50px] bg-yellow-2 text-xl font-semibold"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </main>
+      <footer
+        class="p-10 bg-transparent flex flex-col items-center gap-4 md:flex-row md:justify-between lg:gap-0"
+      >
+        <div class="text-2xl font-bold">A</div>
+        <div>
+          <p class="font-semibold lg:text-xl">Copyright @ 2023 El Bazzazi</p>
+        </div>
+        <div>
+          <p class="font-semibold lg:text-xl">Awwwards inspired</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
