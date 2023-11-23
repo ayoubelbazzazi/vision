@@ -1,35 +1,35 @@
-import "./gsap.js";
-import "./lenis.js"
+import "./animations.js";
+import "./cursor.js";
+import "./lenis.js";
 
-const body = document.body
-const scrollWrap = document.querySelector(".smooth-scroll-wrapper")
-const height = scrollWrap.getBoundingClientRect().height -1
-const speed = .04
-var offset = 0
 const shapes = document.querySelectorAll(".shape");
 const shapeAngles = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
 const circle = document.querySelector(".circle");
 const wordsCircle1 = document.querySelector(".words-circle");
-const wordsCircle2 = document.querySelector(".words-circle-2")
+const wordsCircle2 = document.querySelector(".words-circle-2");
 
 const rotateLetters = (letters, wordsCircle) => {
   letters.forEach((letter, i) => {
     const span = document.createElement("span");
-    span.style.cssText = "position:absolute;top:50%;left:50%;font-size:18px;font-weight:700;text-transform:capitalize";
-    
+    span.classList.add("rotating-letter")
+
     span.innerText = letter;
     wordsCircle.appendChild(span);
     span.style.transform = `translate(${
-      Math.cos((2 * Math.PI * i) / letters.length) *
-        wordsCircle.getBoundingClientRect().width/2 -
+      (Math.cos((2 * Math.PI * i) / letters.length) *
+        wordsCircle.getBoundingClientRect().width) /
+        2 -
       span.getBoundingClientRect().width / 2
     }px,${
-      Math.sin((2 * Math.PI * i) / letters.length) *
-        wordsCircle.getBoundingClientRect().height/2 -
+      (Math.sin((2 * Math.PI * i) / letters.length) *
+        wordsCircle.getBoundingClientRect().height) /
+        2 -
       span.getBoundingClientRect().height / 2
-    }px) rotate(${2*Math.PI*i*1/letters.length*180/Math.PI+90}deg)`;
+    }px) rotate(${
+      (((2 * Math.PI * i * 1) / letters.length) * 180) / Math.PI + 90
+    }deg)`;
   });
-  
+
   shapes.forEach((shape, i) => {
     shape.style.transform = `translate(${
       (Math.cos(shapeAngles[i]) * circle.getBoundingClientRect().width) / 2 -
@@ -39,9 +39,21 @@ const rotateLetters = (letters, wordsCircle) => {
       shape.getBoundingClientRect().height / 2
     }px)`;
   });
-  
+};
+
+rotateLetters("services*services*".split(""), wordsCircle1);
+rotateLetters("contact*contact*".split(""), wordsCircle2);
+
+let windowWidth = window.innerWidth;
+
+window.addEventListener("resize", checkWindowWidth)
+
+function checkWindowWidth() {
+  if (
+    windowWidth !== window.innerWidth
+  ) {
+    location.reload();
+    return;
+  }
+  windowWidth = window.innerWidth;
 }
-
-
-rotateLetters("services*services*".split(""), wordsCircle1)
-rotateLetters("contact*contact*".split(""),wordsCircle2)

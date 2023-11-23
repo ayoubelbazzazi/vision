@@ -2,8 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .rotating-letter {
+    @apply absolute top-1/2 left-1/2 text-[18px] font-bold capitalize 2xl:text-[1.2vw];
+  }
+
+  .full {
+    @apply w-full h-full;
+  }
+}
+
 @layer utilities {
   .triangle {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+}
+
+body:hover #cursor {
+  transform: scale(1);
+}
+
+#cursor {
+  transform: translate(-50%, -50%);
+  transform: scale(0);
+  z-index: 200;
+  border: 0.5px solid #222;
+  pointer-events: none;
+}
+
+header .marquee-container {
+  opacity:1;
+  transition: opacity 300ms cubic-bezier(.25,.63,.61,.98);  
+}
+
+header:hover .marquee-container {
+  opacity:0
+}
+
+.circle {
+  animation:rotate 8s linear infinite;
+}
+
+.marquee1,
+.marquee2,
+.marquee3,
+.marquee4,
+.marquee5 {
+  --width: 0;
+  --marginRight: 0;
+  --duration: 0;
+  animation: marquee calc(var(--duration) * 1s) linear infinite;
+}
+
+.rectangle .marquee {
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+.rectangle:hover .marquee {
+  opacity: 1;
+}
+
+.project, .shape-container {
+  transition: transform 300ms cubic-bezier(.25,.63,.61,.98);
+}
+
+.project .project-title {
+  transition: transform 300ms cubic-bezier(.25,.63,.61,.98);
+}
+
+.project:hover, .shape-container:hover {
+  transform: scale(0.97);
+}
+
+.project:hover .project-title {
+  transform: scale(1.1);
+}
+
+.element {
+  --backgroundColor: #fff;
+  width: 8px;
+  height: 8px;
+  position: fixed;
+  background-color: var(--backgroundColor);
+  transition: top 1s, left 1s, opacity 1s, transform 1s;
+  z-index: 100;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+* {
+  cursor: none;
+}
+
+@media (min-width: 1500px) {
+  .element {
+    height: 0.5vw;
+    width: 0.5vw;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc((var(--width) + var(--marginRight)) * -1px));
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform:rotate(360deg);
   }
 }

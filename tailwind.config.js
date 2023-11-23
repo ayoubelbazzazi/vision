@@ -14,7 +14,7 @@ module.exports = {
           "yellow-2":"#D4C951"
         },
         screens:{
-          "xs":"500px"
+          "xs":"500px",
         }
     },
   },
