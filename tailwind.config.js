@@ -13,6 +13,13 @@ module.exports = {
           "darkyellow":"#1D1C16",
           "yellow-2":"#D4C951"
         },
+        backgroundImage:{
+          "logo":"url('./assets/logo.svg')",
+          "portfolio":"url('./assets/portfolio.svg')",
+          "portfolio-desktop":"url('./assets/portfolio-desktop.svg')",
+          "project-1":"url('./assets/project-1.svg')",
+          "project-1-desktop":"url('./assets/project-1-desktop.svg')"
+        },
         screens:{
           "xs":"500px",
         }

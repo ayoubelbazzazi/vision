@@ -1,4 +1,6 @@
 const toAbout = document.getElementById("to-about");
+const logo = document.getElementById("logo")
+const body = document.querySelector("body")
 const about = document.getElementById("about");
 const scrollTos = ["to-overview", "to-work", "to-about", "to-contact"];
 const scrollDestinations = ["overview", "work", "about", "contact"];
@@ -20,11 +22,15 @@ gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
 
+logo.addEventListener("click", () => {
+  lenis.scrollTo(body, { duration: 2 });
+})
+
 scrollTos.forEach((item, i) => {
   const scrollTo = document.getElementById(item);
   scrollTo.addEventListener("click", () => {
     const destination = document.getElementById(scrollDestinations[i]);
-    lenis.scrollTo(destination, { duration: 2 });
+    lenis.scrollTo(destination, { duration: 4 });
   });
 });
 

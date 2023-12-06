@@ -15,14 +15,12 @@ export const changeColor = (shapeContainer, to) => {
 export const changeShape = (rectangle, i) => {
   const q = gsap.utils.selector(".shape-container");
   const p = gsap.utils.selector(".rectangle-container");
-  const m = gsap.utils.selector(".shape-container");
   const shapes = q(".shape");
   const rects = p(".sub-rectangle");
-  const marqueeContainer = m(".marquee-container");
   const colors = ["#fff", "#FFAEDC", "#FFF480"];
   rectangle.addEventListener("mouseenter", () => {
+    if (window.innerWidth < 1024) return;
     gsap.to(`.elements${i + 1}`, { opacity: 0, duration: 0.3 });
-    // gsap.to(`.marquee2:nth-of-type{${i+1}}`, { opacity: 1, duration: 0.3 });   
     shapes.forEach((shape, j) => {
       if (i === j) {
         gsap.to(shape, {
@@ -41,8 +39,8 @@ export const changeShape = (rectangle, i) => {
     });
   });
   rectangle.addEventListener("mouseleave", () => {
+    if (window.innerWidth < 1024) return;
     gsap.to(`.elements${i + 1}`, { opacity: 1, duration: 0.3 });
-    // gsap.to(`.marquee2${i + 1}`, { opacity: 0, duration: 0.3 });   
 
     rects.forEach((rect) => {
       gsap.to(rect, { scale: 1, duration: 0.3 });

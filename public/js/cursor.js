@@ -1,6 +1,7 @@
 const cursor = document.getElementById("cursor");
 const body = document.body;
-const colorArray = ["#fa00ff", "#ff0000", "#95ff00"];
+// const colorArray = ["#fa00ff", "#ff0000", "#95ff00"];
+const colorArray = ["#A5A1FF", "#000"]
 let isTouchScreen = Boolean(
   /Mobi|Android|iPhone|IEMobile|Opera Mini/i.test(navigator.userAgent)
 );

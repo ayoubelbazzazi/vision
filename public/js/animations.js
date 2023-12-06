@@ -1,6 +1,7 @@
 import { changeColor, changeShape } from "./helpers.js";
 gsap.registerPlugin(ScrollTrigger);
 
+const progressBar = document.getElementById("progress");
 const shapeContainer = document.querySelector(".shape-container");
 const rectangles = document.querySelectorAll(".rectangle");
 const marquee1 = document.querySelectorAll(".shape-container .marquee1");
@@ -26,16 +27,31 @@ gsap.to(".name", {
 gsap.to(".shape", { rotate: "360", duration: 8, ease: "none", repeat: -1 });
 
 shapeContainer.addEventListener("mouseenter", () => {
+  if (window.innerWidth < 1024) return;
+
   changeColor(shapeContainer, true);
 });
 
 shapeContainer.addEventListener("mouseleave", () => {
+  if (window.innerWidth < 1024) return;
+
   changeColor(shapeContainer, false);
 });
 
 rectangles.forEach((rectangle, i) => {
   changeShape(rectangle, i);
 });
+
+// Progress bar animation
+
+window.addEventListener("scroll", setProgressBarHeight);
+setProgressBarHeight()
+
+function setProgressBarHeight() {
+  const height =
+    (100 * (window.scrollY + window.innerHeight)) / document.body.offsetHeight;
+  progressBar.style.setProperty("--height", height);
+}
 
 // Skills scroll animations
 
@@ -52,8 +68,7 @@ const animateSkills = () => {
         scrollTrigger: {
           trigger: skill,
           start: "top 90%",
-          toggleActions: "restart none none reverse",
-       },
+        },
       });
     });
     return;
@@ -102,7 +117,6 @@ const animateProjects = () => {
       scrollTrigger: {
         trigger: project,
         start: "top 90%",
-        toggleActions: "restart none none reverse",
       },
     });
   });
@@ -152,7 +166,7 @@ gsap.to(".row-2", {
 
 animateSkills();
 rotateWord(".words-circle");
-rotateWord(".words-circle-2");
+// rotateWord(".words-circle-2");
 
 // Marquees css animations params
 

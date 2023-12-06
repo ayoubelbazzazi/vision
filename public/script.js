@@ -1,6 +1,7 @@
-import "./animations.js";
-import "./cursor.js";
-import "./lenis.js";
+import "./js/loading.js"
+import "./js//animations.js";
+import "./js//cursor.js";
+import "./js//lenis.js";
 
 const shapes = document.querySelectorAll(".shape");
 const shapeAngles = [0, (Math.PI * 2) / 3, (Math.PI * 4) / 3];
