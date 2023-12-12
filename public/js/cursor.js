@@ -20,7 +20,7 @@ let cursorPos = { x: 0, y: 0 };
 let cursorTimeout;
 
 function moveCursor(e) {
-  if (isTouchScreen || window.innerWidth < 1200) return;
+  if (isTouchScreen || window.innerWidth < 1024) return;
   clearTimeout(cursorTimeout);
   cursorMoving = true;
   cursor.style.top = e.clientY + "px";

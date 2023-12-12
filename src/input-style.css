@@ -12,6 +12,10 @@
     background-color: #a5a1ff;
     color: #fff;
   }
+
+  * {
+    cursor: none;
+  }
 }
 
 @layer components {
@@ -22,16 +26,24 @@
   .full {
     @apply w-full h-full;
   }
+
+  .image-controls {
+    @apply bg-center bg-cover bg-no-repeat;
+  }
 }
 
 @layer utilities {
   .triangle {
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
   }
+
+  button {
+    cursor: none;
+  }
 }
 
 body.no-scroll {
-  overflow:hidden;
+  overflow: hidden;
 }
 
 /* Loading animation controls */
@@ -46,14 +58,7 @@ body.no-scroll {
   animation: slide-up 1.5s 2s cubic-bezier(0.74, 0.01, 0.19, 1) forwards;
 }
 
-/* #slide-2 svg path, #slide-2 svg circle  {
-  animation:move-slide linear 1s 1.5s forwards; 
-}
-
-#slide-2 svg {
-  transform-origin:center;
-  animation:zoom 1s 1.5s cubic-bezier(.74,.01,.19,1) forwards;
-} */
+/* cursor controls */
 
 body:hover #cursor {
   transform: scale(1);
@@ -147,7 +152,7 @@ header .marquee-container {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1536px) {
   .element {
     height: 0.5vw;
     width: 0.5vw;
