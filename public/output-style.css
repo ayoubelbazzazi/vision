@@ -1586,6 +1586,10 @@ header .marquee-container {
     margin-bottom: 0px;
   }
 
+  .lg\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
   .lg\:mb-20 {
     margin-bottom: 5rem;
   }
@@ -1618,6 +1622,18 @@ header .marquee-container {
     height: 100%;
   }
 
+  .lg\:h-\[300px\] {
+    height: 300px;
+  }
+
+  .lg\:h-\[2px\] {
+    height: 2px;
+  }
+
+  .lg\:h-\[280px\] {
+    height: 280px;
+  }
+
   .lg\:max-h-\[800px\] {
     max-height: 800px;
   }
@@ -1636,6 +1652,22 @@ header .marquee-container {
 
   .lg\:w-\[70\%\] {
     width: 70%;
+  }
+
+  .lg\:w-\[300px\] {
+    width: 300px;
+  }
+
+  .lg\:w-\[px\] {
+    width: px;
+  }
+
+  .lg\:w-\[28px\] {
+    width: 28px;
+  }
+
+  .lg\:w-\[280px\] {
+    width: 280px;
   }
 
   .lg\:translate-x-\[50\%\] {
@@ -1733,24 +1765,8 @@ header .marquee-container {
 }
 
 @media (min-width: 1280px) {
-  .xl\:h-\[\] {
-    height: ;
-  }
-
-  .xl\:h-\[400px\] {
-    height: 400px;
-  }
-
   .xl\:h-\[300px\] {
     height: 300px;
-  }
-
-  .xl\:w-\[\] {
-    width: ;
-  }
-
-  .xl\:w-\[400px\] {
-    width: 400px;
   }
 
   .xl\:w-\[300px\] {
@@ -1769,6 +1785,10 @@ header .marquee-container {
 }
 
 @media (min-width: 1536px) {
+  .\32xl\:mb-\[\.3vw\] {
+    margin-bottom: .3vw;
+  }
+
   .\32xl\:mb-\[10vh\] {
     margin-bottom: 10vh;
   }
@@ -1791,6 +1811,22 @@ header .marquee-container {
 
   .\32xl\:mr-\[100px\] {
     margin-right: 100px;
+  }
+
+  .\32xl\:mb-\[\.5vw\] {
+    margin-bottom: .5vw;
+  }
+
+  .\32xl\:mb-\[1vw\] {
+    margin-bottom: 1vw;
+  }
+
+  .\32xl\:mb-\[10vw\] {
+    margin-bottom: 10vw;
+  }
+
+  .\32xl\:mb-\[vw\] {
+    margin-bottom: vw;
   }
 
   .\32xl\:h-\[1\.2vw\] {
@@ -1910,9 +1946,9 @@ header .marquee-container {
     padding: 3vw;
   }
 
-  .\32xl\:px-\[200px\] {
-    padding-left: 200px;
-    padding-right: 200px;
+  .\32xl\:px-\[10vw\] {
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 
   .\32xl\:px-\[4vw\] {
@@ -1925,9 +1961,14 @@ header .marquee-container {
     padding-right: 5vw;
   }
 
-  .\32xl\:px-\[10vw\] {
-    padding-left: 10vw;
-    padding-right: 10vw;
+  .\32xl\:px-\[7vw\] {
+    padding-left: 7vw;
+    padding-right: 7vw;
+  }
+
+  .\32xl\:px-\[3vw\] {
+    padding-left: 3vw;
+    padding-right: 3vw;
   }
 
   .\32xl\:pb-\[10vh\] {
