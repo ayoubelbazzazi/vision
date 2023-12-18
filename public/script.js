@@ -1,4 +1,4 @@
-import "./js/loading.js"
+import "./js/loading.js";
 import "./js//animations.js";
 import "./js//cursor.js";
 import "./js//lenis.js";
@@ -9,10 +9,12 @@ const circle = document.querySelector(".circle");
 const wordsCircle1 = document.querySelector(".words-circle");
 const wordsCircle2 = document.querySelector(".words-circle-2");
 
+
 const rotateLetters = (letters, wordsCircle) => {
+  console.log(wordsCircle)
   letters.forEach((letter, i) => {
     const span = document.createElement("span");
-    span.classList.add("rotating-letter")
+    span.classList.add("rotating-letter");
 
     span.innerText = letter;
     wordsCircle.appendChild(span);
@@ -43,16 +45,14 @@ const rotateLetters = (letters, wordsCircle) => {
 };
 
 rotateLetters("services*services*".split(""), wordsCircle1);
-rotateLetters("contact*contact*".split(""), wordsCircle2);
+// rotateLetters("contact*contact*".split(""), wordsCircle2);
 
 let windowWidth = window.innerWidth;
 
-window.addEventListener("resize", checkWindowWidth)
+window.addEventListener("resize", checkWindowWidth);
 
 function checkWindowWidth() {
-  if (
-    windowWidth !== window.innerWidth
-  ) {
+  if (windowWidth !== window.innerWidth) {
     location.reload();
     return;
   }
