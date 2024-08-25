@@ -1,699 +1,533 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./output-style.css" />
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title>Home page</title>
-    <script
-      src="https://kit.fontawesome.com/c6c209c8da.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"
-      defer
-    ></script>
+    <script src="https://kit.fontawesome.com/c6c209c8da.js" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.23/bundled/lenis.min.js"></script>
     <script type="module" src="./script.js" defer></script>
-  </head>
-  <body
-    id="body"
-    class="bg-black text-white p-2 2xl:px-[3vw] scrollbar-none opacity-0 cursor-none"
-  >
-    <div
-      id="loading-container"
-      class="fixed left-0 top-0 w-screen h-screen bg-black flex items-center justify-center z-50 overflow-x-hidden"
-    >
-      <div class="w-[40%] md:w-[20%]">
-        <div
-          class="fixed left-0 top-0 w-screen h-screen bg-black flex items-center justify-center z-50"
-        >
-          <div class="w-[40%] md:w-[20%] lg:w-[30%]">
-            <svg
-              width="100"
-              height="28"
-              viewBox="0 0 100 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-full h-auto"
-            >
-              <path
-                d="M4.24427 0.818181L12.017 22.858H12.3238L20.0965 0.818181H23.4204L13.8068 27H10.534L0.92041 0.818181H4.24427Z"
-                fill="#A5A1FF"
-              />
-              <path
-                d="M27.0894 27V7.36364H30.1065V27H27.0894ZM28.6235 4.09091C28.0355 4.09091 27.5284 3.89062 27.1022 3.49006C26.6846 3.08949 26.4758 2.60795 26.4758 2.04545C26.4758 1.48295 26.6846 1.00142 27.1022 0.600851C27.5284 0.200284 28.0355 0 28.6235 0C29.2116 0 29.7144 0.200284 30.1321 0.600851C30.5582 1.00142 30.7713 1.48295 30.7713 2.04545C30.7713 2.60795 30.5582 3.08949 30.1321 3.49006C29.7144 3.89062 29.2116 4.09091 28.6235 4.09091Z"
-                fill="#A5A1FF"
-              />
-              <path
-                d="M49.5415 11.7614L46.8313 12.5284C46.6608 12.0767 46.4094 11.6378 46.077 11.2116C45.7532 10.777 45.31 10.419 44.7475 10.1378C44.185 9.85653 43.4648 9.71591 42.587 9.71591C41.3853 9.71591 40.3838 9.9929 39.5827 10.5469C38.7901 11.0923 38.3938 11.7869 38.3938 12.6307C38.3938 13.3807 38.6665 13.973 39.212 14.4077C39.7574 14.8423 40.6097 15.2045 41.7688 15.4943L44.6835 16.2102C46.4392 16.6364 47.7475 17.2884 48.6083 18.1662C49.4691 19.0355 49.8995 20.1562 49.8995 21.5284C49.8995 22.6534 49.5756 23.6591 48.9279 24.5455C48.2887 25.4318 47.3938 26.1307 46.2432 26.642C45.0926 27.1534 43.7546 27.4091 42.229 27.4091C40.2262 27.4091 38.5685 26.9744 37.256 26.1051C35.9435 25.2358 35.1125 23.9659 34.7631 22.2955L37.6267 21.5795C37.8995 22.6364 38.4151 23.429 39.1736 23.9574C39.9407 24.4858 40.9421 24.75 42.1779 24.75C43.5841 24.75 44.7006 24.4517 45.5273 23.8551C46.3625 23.25 46.7801 22.5256 46.7801 21.6818C46.7801 21 46.5415 20.429 46.0642 19.9688C45.587 19.5 44.854 19.1506 43.8654 18.9205L40.5926 18.1534C38.7943 17.7273 37.4733 17.0668 36.6296 16.1719C35.7943 15.2685 35.3767 14.1392 35.3767 12.7841C35.3767 11.6761 35.6878 10.696 36.31 9.84375C36.9407 8.99148 37.7972 8.32244 38.8796 7.83665C39.9705 7.35085 41.2063 7.10795 42.587 7.10795C44.5301 7.10795 46.0557 7.53409 47.1637 8.38636C48.2801 9.23864 49.0728 10.3636 49.5415 11.7614Z"
-                fill="#A5A1FF"
-              />
-              <path d="M54.441 27V7.36364H57.4581V27H54.441Z" fill="#A5A1FF" />
-              <path
-                d="M70.9613 27.4091C69.1885 27.4091 67.6331 26.9872 66.2951 26.1435C64.9655 25.2997 63.9257 24.1193 63.1757 22.6023C62.4343 21.0852 62.0635 19.3125 62.0635 17.2841C62.0635 15.2386 62.4343 13.4531 63.1757 11.9276C63.9257 10.402 64.9655 9.21733 66.2951 8.37358C67.6331 7.52983 69.1885 7.10795 70.9613 7.10795C72.734 7.10795 74.2851 7.52983 75.6147 8.37358C76.9527 9.21733 77.9925 10.402 78.734 11.9276C79.484 13.4531 79.859 15.2386 79.859 17.2841C79.859 19.3125 79.484 21.0852 78.734 22.6023C77.9925 24.1193 76.9527 25.2997 75.6147 26.1435C74.2851 26.9872 72.734 27.4091 70.9613 27.4091ZM70.9613 24.6989C72.3078 24.6989 73.4158 24.3537 74.2851 23.6634C75.1544 22.973 75.7979 22.0653 76.2155 20.9403C76.6331 19.8153 76.8419 18.5966 76.8419 17.2841C76.8419 15.9716 76.6331 14.7486 76.2155 13.6151C75.7979 12.4815 75.1544 11.5653 74.2851 10.8665C73.4158 10.1676 72.3078 9.81818 70.9613 9.81818C69.6147 9.81818 68.5067 10.1676 67.6374 10.8665C66.7681 11.5653 66.1246 12.4815 65.707 13.6151C65.2894 14.7486 65.0806 15.9716 65.0806 17.2841C65.0806 18.5966 65.2894 19.8153 65.707 20.9403C66.1246 22.0653 66.7681 22.973 67.6374 23.6634C68.5067 24.3537 69.6147 24.6989 70.9613 24.6989Z"
-                fill="#A5A1FF"
-              />
-              <path
-                d="M87.4815 15.1875V27H84.4644V7.36364H87.3792V10.4318H87.6349C88.0951 9.43466 88.794 8.63352 89.7315 8.02841C90.669 7.41477 91.8792 7.10795 93.3622 7.10795C94.6917 7.10795 95.8551 7.38068 96.8522 7.92614C97.8494 8.46307 98.625 9.28125 99.1789 10.3807C99.7329 11.4716 100.01 12.8523 100.01 14.5227V27H96.9929V14.7273C96.9929 13.1847 96.5923 11.983 95.7912 11.1222C94.99 10.2528 93.8906 9.81818 92.4929 9.81818C91.5298 9.81818 90.669 10.027 89.9105 10.4446C89.1605 10.8622 88.5681 11.4716 88.1335 12.2727C87.6988 13.0739 87.4815 14.0455 87.4815 15.1875Z"
-                fill="#A5A1FF"
-              />
-              <circle cx="56" cy="2" r="2" fill="#A5A1FF" />
-            </svg>
-          </div>
+</head>
+
+<body id="body" class="bg-black text-white p-2 2xl:px-[3vw] scrollbar-none opacity-0 cursor-none">
+    <div id="loading-container"
+        class="fixed left-0 top-0 w-screen h-screen bg-black flex items-center justify-center z-50 overflow-x-hidden">
+        <div class="w-[40%] md:w-[20%]">
+            <div class="fixed left-0 top-0 w-screen h-screen bg-black flex items-center justify-center z-50">
+                <div class="w-[40%] md:w-[20%] lg:w-[30%]">
+                    <svg width="100" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="w-full h-auto">
+                        <path
+                            d="M4.24427 0.818181L12.017 22.858H12.3238L20.0965 0.818181H23.4204L13.8068 27H10.534L0.92041 0.818181H4.24427Z"
+                            fill="#A5A1FF" />
+                        <path
+                            d="M27.0894 27V7.36364H30.1065V27H27.0894ZM28.6235 4.09091C28.0355 4.09091 27.5284 3.89062 27.1022 3.49006C26.6846 3.08949 26.4758 2.60795 26.4758 2.04545C26.4758 1.48295 26.6846 1.00142 27.1022 0.600851C27.5284 0.200284 28.0355 0 28.6235 0C29.2116 0 29.7144 0.200284 30.1321 0.600851C30.5582 1.00142 30.7713 1.48295 30.7713 2.04545C30.7713 2.60795 30.5582 3.08949 30.1321 3.49006C29.7144 3.89062 29.2116 4.09091 28.6235 4.09091Z"
+                            fill="#A5A1FF" />
+                        <path
+                            d="M49.5415 11.7614L46.8313 12.5284C46.6608 12.0767 46.4094 11.6378 46.077 11.2116C45.7532 10.777 45.31 10.419 44.7475 10.1378C44.185 9.85653 43.4648 9.71591 42.587 9.71591C41.3853 9.71591 40.3838 9.9929 39.5827 10.5469C38.7901 11.0923 38.3938 11.7869 38.3938 12.6307C38.3938 13.3807 38.6665 13.973 39.212 14.4077C39.7574 14.8423 40.6097 15.2045 41.7688 15.4943L44.6835 16.2102C46.4392 16.6364 47.7475 17.2884 48.6083 18.1662C49.4691 19.0355 49.8995 20.1562 49.8995 21.5284C49.8995 22.6534 49.5756 23.6591 48.9279 24.5455C48.2887 25.4318 47.3938 26.1307 46.2432 26.642C45.0926 27.1534 43.7546 27.4091 42.229 27.4091C40.2262 27.4091 38.5685 26.9744 37.256 26.1051C35.9435 25.2358 35.1125 23.9659 34.7631 22.2955L37.6267 21.5795C37.8995 22.6364 38.4151 23.429 39.1736 23.9574C39.9407 24.4858 40.9421 24.75 42.1779 24.75C43.5841 24.75 44.7006 24.4517 45.5273 23.8551C46.3625 23.25 46.7801 22.5256 46.7801 21.6818C46.7801 21 46.5415 20.429 46.0642 19.9688C45.587 19.5 44.854 19.1506 43.8654 18.9205L40.5926 18.1534C38.7943 17.7273 37.4733 17.0668 36.6296 16.1719C35.7943 15.2685 35.3767 14.1392 35.3767 12.7841C35.3767 11.6761 35.6878 10.696 36.31 9.84375C36.9407 8.99148 37.7972 8.32244 38.8796 7.83665C39.9705 7.35085 41.2063 7.10795 42.587 7.10795C44.5301 7.10795 46.0557 7.53409 47.1637 8.38636C48.2801 9.23864 49.0728 10.3636 49.5415 11.7614Z"
+                            fill="#A5A1FF" />
+                        <path d="M54.441 27V7.36364H57.4581V27H54.441Z" fill="#A5A1FF" />
+                        <path
+                            d="M70.9613 27.4091C69.1885 27.4091 67.6331 26.9872 66.2951 26.1435C64.9655 25.2997 63.9257 24.1193 63.1757 22.6023C62.4343 21.0852 62.0635 19.3125 62.0635 17.2841C62.0635 15.2386 62.4343 13.4531 63.1757 11.9276C63.9257 10.402 64.9655 9.21733 66.2951 8.37358C67.6331 7.52983 69.1885 7.10795 70.9613 7.10795C72.734 7.10795 74.2851 7.52983 75.6147 8.37358C76.9527 9.21733 77.9925 10.402 78.734 11.9276C79.484 13.4531 79.859 15.2386 79.859 17.2841C79.859 19.3125 79.484 21.0852 78.734 22.6023C77.9925 24.1193 76.9527 25.2997 75.6147 26.1435C74.2851 26.9872 72.734 27.4091 70.9613 27.4091ZM70.9613 24.6989C72.3078 24.6989 73.4158 24.3537 74.2851 23.6634C75.1544 22.973 75.7979 22.0653 76.2155 20.9403C76.6331 19.8153 76.8419 18.5966 76.8419 17.2841C76.8419 15.9716 76.6331 14.7486 76.2155 13.6151C75.7979 12.4815 75.1544 11.5653 74.2851 10.8665C73.4158 10.1676 72.3078 9.81818 70.9613 9.81818C69.6147 9.81818 68.5067 10.1676 67.6374 10.8665C66.7681 11.5653 66.1246 12.4815 65.707 13.6151C65.2894 14.7486 65.0806 15.9716 65.0806 17.2841C65.0806 18.5966 65.2894 19.8153 65.707 20.9403C66.1246 22.0653 66.7681 22.973 67.6374 23.6634C68.5067 24.3537 69.6147 24.6989 70.9613 24.6989Z"
+                            fill="#A5A1FF" />
+                        <path
+                            d="M87.4815 15.1875V27H84.4644V7.36364H87.3792V10.4318H87.6349C88.0951 9.43466 88.794 8.63352 89.7315 8.02841C90.669 7.41477 91.8792 7.10795 93.3622 7.10795C94.6917 7.10795 95.8551 7.38068 96.8522 7.92614C97.8494 8.46307 98.625 9.28125 99.1789 10.3807C99.7329 11.4716 100.01 12.8523 100.01 14.5227V27H96.9929V14.7273C96.9929 13.1847 96.5923 11.983 95.7912 11.1222C94.99 10.2528 93.8906 9.81818 92.4929 9.81818C91.5298 9.81818 90.669 10.027 89.9105 10.4446C89.1605 10.8622 88.5681 11.4716 88.1335 12.2727C87.6988 13.0739 87.4815 14.0455 87.4815 15.1875Z"
+                            fill="#A5A1FF" />
+                        <circle cx="56" cy="2" r="2" fill="#A5A1FF" />
+                    </svg>
+                </div>
+            </div>
+            <div id="slide-2"
+                class="fixed left-0 top-0 w-screen h-screen bg-lightpurple flex items-center justify-center z-[60] overflow-hidden">
+                <div class="w-[40%] md:w-[20%] lg:w-[30%]">
+                    <svg width="100" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        overflow="visible" class="w-full h-auto">
+                        <path
+                            d="M4.24427 0.818181L12.017 22.858H12.3238L20.0965 0.818181H23.4204L13.8068 27H10.534L0.92041 0.818181H4.24427Z"
+                            fill="black" />
+                        <path
+                            d="M27.0894 27V7.36364H30.1065V27H27.0894ZM28.6235 4.09091C28.0355 4.09091 27.5284 3.89062 27.1022 3.49006C26.6846 3.08949 26.4758 2.60795 26.4758 2.04545C26.4758 1.48295 26.6846 1.00142 27.1022 0.600851C27.5284 0.200284 28.0355 0 28.6235 0C29.2116 0 29.7144 0.200284 30.1321 0.600851C30.5582 1.00142 30.7713 1.48295 30.7713 2.04545C30.7713 2.60795 30.5582 3.08949 30.1321 3.49006C29.7144 3.89062 29.2116 4.09091 28.6235 4.09091Z"
+                            fill="black" />
+                        <path
+                            d="M49.5415 11.7614L46.8313 12.5284C46.6608 12.0767 46.4094 11.6378 46.077 11.2116C45.7532 10.777 45.31 10.419 44.7475 10.1378C44.185 9.85653 43.4648 9.71591 42.587 9.71591C41.3853 9.71591 40.3838 9.9929 39.5827 10.5469C38.7901 11.0923 38.3938 11.7869 38.3938 12.6307C38.3938 13.3807 38.6665 13.973 39.212 14.4077C39.7574 14.8423 40.6097 15.2045 41.7688 15.4943L44.6835 16.2102C46.4392 16.6364 47.7475 17.2884 48.6083 18.1662C49.4691 19.0355 49.8995 20.1562 49.8995 21.5284C49.8995 22.6534 49.5756 23.6591 48.9279 24.5455C48.2887 25.4318 47.3938 26.1307 46.2432 26.642C45.0926 27.1534 43.7546 27.4091 42.229 27.4091C40.2262 27.4091 38.5685 26.9744 37.256 26.1051C35.9435 25.2358 35.1125 23.9659 34.7631 22.2955L37.6267 21.5795C37.8995 22.6364 38.4151 23.429 39.1736 23.9574C39.9407 24.4858 40.9421 24.75 42.1779 24.75C43.5841 24.75 44.7006 24.4517 45.5273 23.8551C46.3625 23.25 46.7801 22.5256 46.7801 21.6818C46.7801 21 46.5415 20.429 46.0642 19.9688C45.587 19.5 44.854 19.1506 43.8654 18.9205L40.5926 18.1534C38.7943 17.7273 37.4733 17.0668 36.6296 16.1719C35.7943 15.2685 35.3767 14.1392 35.3767 12.7841C35.3767 11.6761 35.6878 10.696 36.31 9.84375C36.9407 8.99148 37.7972 8.32244 38.8796 7.83665C39.9705 7.35085 41.2063 7.10795 42.587 7.10795C44.5301 7.10795 46.0557 7.53409 47.1637 8.38636C48.2801 9.23864 49.0728 10.3636 49.5415 11.7614Z"
+                            fill="black" />
+                        <path d="M54.441 27V7.36364H57.4581V27H54.441Z" fill="black" />
+                        <path
+                            d="M70.9613 27.4091C69.1885 27.4091 67.6331 26.9872 66.2951 26.1435C64.9655 25.2997 63.9257 24.1193 63.1757 22.6023C62.4343 21.0852 62.0635 19.3125 62.0635 17.2841C62.0635 15.2386 62.4343 13.4531 63.1757 11.9276C63.9257 10.402 64.9655 9.21733 66.2951 8.37358C67.6331 7.52983 69.1885 7.10795 70.9613 7.10795C72.734 7.10795 74.2851 7.52983 75.6147 8.37358C76.9527 9.21733 77.9925 10.402 78.734 11.9276C79.484 13.4531 79.859 15.2386 79.859 17.2841C79.859 19.3125 79.484 21.0852 78.734 22.6023C77.9925 24.1193 76.9527 25.2997 75.6147 26.1435C74.2851 26.9872 72.734 27.4091 70.9613 27.4091ZM70.9613 24.6989C72.3078 24.6989 73.4158 24.3537 74.2851 23.6634C75.1544 22.973 75.7979 22.0653 76.2155 20.9403C76.6331 19.8153 76.8419 18.5966 76.8419 17.2841C76.8419 15.9716 76.6331 14.7486 76.2155 13.6151C75.7979 12.4815 75.1544 11.5653 74.2851 10.8665C73.4158 10.1676 72.3078 9.81818 70.9613 9.81818C69.6147 9.81818 68.5067 10.1676 67.6374 10.8665C66.7681 11.5653 66.1246 12.4815 65.707 13.6151C65.2894 14.7486 65.0806 15.9716 65.0806 17.2841C65.0806 18.5966 65.2894 19.8153 65.707 20.9403C66.1246 22.0653 66.7681 22.973 67.6374 23.6634C68.5067 24.3537 69.6147 24.6989 70.9613 24.6989Z"
+                            fill="black" />
+                        <path
+                            d="M87.4815 15.1875V27H84.4644V7.36364H87.3792V10.4318H87.6349C88.0951 9.43466 88.794 8.63352 89.7315 8.02841C90.669 7.41477 91.8792 7.10795 93.3622 7.10795C94.6917 7.10795 95.8551 7.38068 96.8522 7.92614C97.8494 8.46307 98.625 9.28125 99.1789 10.3807C99.7329 11.4716 100.01 12.8523 100.01 14.5227V27H96.9929V14.7273C96.9929 13.1847 96.5923 11.983 95.7912 11.1222C94.99 10.2528 93.8906 9.81818 92.4929 9.81818C91.5298 9.81818 90.669 10.027 89.9105 10.4446C89.1605 10.8622 88.5681 11.4716 88.1335 12.2727C87.6988 13.0739 87.4815 14.0455 87.4815 15.1875Z"
+                            fill="black" />
+                        <circle id="dot" cx="56" cy="2" r="2" fill="black" />
+                    </svg>
+                </div>
+            </div>
         </div>
-        <div
-          id="slide-2"
-          class="fixed left-0 top-0 w-screen h-screen bg-lightpurple flex items-center justify-center z-[60] overflow-hidden"
-        >
-          <div class="w-[40%] md:w-[20%] lg:w-[30%]">
-            <svg
-              width="100"
-              height="28"
-              viewBox="0 0 100 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              overflow="visible"
-              class="w-full h-auto"
-            >
-              <path
-                d="M4.24427 0.818181L12.017 22.858H12.3238L20.0965 0.818181H23.4204L13.8068 27H10.534L0.92041 0.818181H4.24427Z"
-                fill="black"
-              />
-              <path
-                d="M27.0894 27V7.36364H30.1065V27H27.0894ZM28.6235 4.09091C28.0355 4.09091 27.5284 3.89062 27.1022 3.49006C26.6846 3.08949 26.4758 2.60795 26.4758 2.04545C26.4758 1.48295 26.6846 1.00142 27.1022 0.600851C27.5284 0.200284 28.0355 0 28.6235 0C29.2116 0 29.7144 0.200284 30.1321 0.600851C30.5582 1.00142 30.7713 1.48295 30.7713 2.04545C30.7713 2.60795 30.5582 3.08949 30.1321 3.49006C29.7144 3.89062 29.2116 4.09091 28.6235 4.09091Z"
-                fill="black"
-              />
-              <path
-                d="M49.5415 11.7614L46.8313 12.5284C46.6608 12.0767 46.4094 11.6378 46.077 11.2116C45.7532 10.777 45.31 10.419 44.7475 10.1378C44.185 9.85653 43.4648 9.71591 42.587 9.71591C41.3853 9.71591 40.3838 9.9929 39.5827 10.5469C38.7901 11.0923 38.3938 11.7869 38.3938 12.6307C38.3938 13.3807 38.6665 13.973 39.212 14.4077C39.7574 14.8423 40.6097 15.2045 41.7688 15.4943L44.6835 16.2102C46.4392 16.6364 47.7475 17.2884 48.6083 18.1662C49.4691 19.0355 49.8995 20.1562 49.8995 21.5284C49.8995 22.6534 49.5756 23.6591 48.9279 24.5455C48.2887 25.4318 47.3938 26.1307 46.2432 26.642C45.0926 27.1534 43.7546 27.4091 42.229 27.4091C40.2262 27.4091 38.5685 26.9744 37.256 26.1051C35.9435 25.2358 35.1125 23.9659 34.7631 22.2955L37.6267 21.5795C37.8995 22.6364 38.4151 23.429 39.1736 23.9574C39.9407 24.4858 40.9421 24.75 42.1779 24.75C43.5841 24.75 44.7006 24.4517 45.5273 23.8551C46.3625 23.25 46.7801 22.5256 46.7801 21.6818C46.7801 21 46.5415 20.429 46.0642 19.9688C45.587 19.5 44.854 19.1506 43.8654 18.9205L40.5926 18.1534C38.7943 17.7273 37.4733 17.0668 36.6296 16.1719C35.7943 15.2685 35.3767 14.1392 35.3767 12.7841C35.3767 11.6761 35.6878 10.696 36.31 9.84375C36.9407 8.99148 37.7972 8.32244 38.8796 7.83665C39.9705 7.35085 41.2063 7.10795 42.587 7.10795C44.5301 7.10795 46.0557 7.53409 47.1637 8.38636C48.2801 9.23864 49.0728 10.3636 49.5415 11.7614Z"
-                fill="black"
-              />
-              <path d="M54.441 27V7.36364H57.4581V27H54.441Z" fill="black" />
-              <path
-                d="M70.9613 27.4091C69.1885 27.4091 67.6331 26.9872 66.2951 26.1435C64.9655 25.2997 63.9257 24.1193 63.1757 22.6023C62.4343 21.0852 62.0635 19.3125 62.0635 17.2841C62.0635 15.2386 62.4343 13.4531 63.1757 11.9276C63.9257 10.402 64.9655 9.21733 66.2951 8.37358C67.6331 7.52983 69.1885 7.10795 70.9613 7.10795C72.734 7.10795 74.2851 7.52983 75.6147 8.37358C76.9527 9.21733 77.9925 10.402 78.734 11.9276C79.484 13.4531 79.859 15.2386 79.859 17.2841C79.859 19.3125 79.484 21.0852 78.734 22.6023C77.9925 24.1193 76.9527 25.2997 75.6147 26.1435C74.2851 26.9872 72.734 27.4091 70.9613 27.4091ZM70.9613 24.6989C72.3078 24.6989 73.4158 24.3537 74.2851 23.6634C75.1544 22.973 75.7979 22.0653 76.2155 20.9403C76.6331 19.8153 76.8419 18.5966 76.8419 17.2841C76.8419 15.9716 76.6331 14.7486 76.2155 13.6151C75.7979 12.4815 75.1544 11.5653 74.2851 10.8665C73.4158 10.1676 72.3078 9.81818 70.9613 9.81818C69.6147 9.81818 68.5067 10.1676 67.6374 10.8665C66.7681 11.5653 66.1246 12.4815 65.707 13.6151C65.2894 14.7486 65.0806 15.9716 65.0806 17.2841C65.0806 18.5966 65.2894 19.8153 65.707 20.9403C66.1246 22.0653 66.7681 22.973 67.6374 23.6634C68.5067 24.3537 69.6147 24.6989 70.9613 24.6989Z"
-                fill="black"
-              />
-              <path
-                d="M87.4815 15.1875V27H84.4644V7.36364H87.3792V10.4318H87.6349C88.0951 9.43466 88.794 8.63352 89.7315 8.02841C90.669 7.41477 91.8792 7.10795 93.3622 7.10795C94.6917 7.10795 95.8551 7.38068 96.8522 7.92614C97.8494 8.46307 98.625 9.28125 99.1789 10.3807C99.7329 11.4716 100.01 12.8523 100.01 14.5227V27H96.9929V14.7273C96.9929 13.1847 96.5923 11.983 95.7912 11.1222C94.99 10.2528 93.8906 9.81818 92.4929 9.81818C91.5298 9.81818 90.669 10.027 89.9105 10.4446C89.1605 10.8622 88.5681 11.4716 88.1335 12.2727C87.6988 13.0739 87.4815 14.0455 87.4815 15.1875Z"
-                fill="black"
-              />
-              <circle id="dot" cx="56" cy="2" r="2" fill="black" />
-            </svg>
-          </div>
-        </div>
-      </div>
     </div>
-    <div
-      id="cursor"
-      class="fixed top-1/2 left-0 rounded-full bg-white w-[15px] h-[15px] hidden md:block 2xl:w-[1.2vw] 2xl:h-[1.2vw]"
-    ></div>
+    <div id="cursor"
+        class="fixed top-1/2 left-0 rounded-full bg-white w-[15px] h-[15px] hidden md:block 2xl:w-[1.2vw] 2xl:h-[1.2vw]">
+    </div>
     <div id="progress-bar" class="hidden lg:block fixed right-0 top-0 w-2 2xl:w-[.5vw] h-screen ">
-      <div id="progress" class="w-full h-1/2 bg-white"></div>
+        <div id="progress" class="w-full h-1/2 bg-white"></div>
     </div>
-    <div
-      id="myname"
-      class="h-fit py-[10vh] w-full flex items-center justify-center"
-    >
-      <h3 class="flex flex-col text-[29px] lg:text-[40px] name 2xl:text-[3vw]">
-        <span>Creative</span>
-        <span class="transform -translate-y-4">Agency</span>
-      </h3>
+    <div id="myname" class="h-fit py-[10vh] w-full flex items-center justify-center">
+        <h3 class="flex flex-col text-[29px] lg:text-[40px] name 2xl:text-[3vw]">
+            <span>Creative</span>
+            <span class="transform -translate-y-4">Agency</span>
+        </h3>
     </div>
     <header class="">
-      <div
-        class="flex flex-col items-center gap-2 lg:grid lg:grid-cols-2 2xl:gap-[1vw]"
-      >
-        <div
-          id="to-overview"
-          class="h-[400px] lg:[300px] w-full bg-blue rounded-[50px] p-8 flex flex-col justify-between shape-container relative overflow-hidden  2xl:h-[60vh] 2xl:rounded-[5vw] 2xl:p-[3vw]"
-        >
-          <div
-            class="absolute left-0 top-1/2 transform -translate-y-1/2 flex text-6xl font-semibold capitalize z-10 marquee-container 2xl:text-[5vw]"
-          >
-            <p class="whitespace-nowrap marquee1 mr-[30px] 2xl:mr-[100px]">
-              Let's create the best digital experience!
-            </p>
-            <p class="whitespace-nowrap marquee1">
-              Let's create the best digital experience!
-            </p>
-          </div>
-          <div class="heading flex justify-between items-center">
-            <h4 class="text-xl font-semibold 2xl:text-[2vw]">Vision</h4>
-            <div
-              class="bg-logo bg-center bg-no-repeat bg-cover w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full 2xl:w-[4vw] 2xl:h-[4vw]"
-            ></div>
-          </div>
-          <div class="main project-title flex items-center justify-center">
-            <div
-              class="w-[160px] h-[160px] rounded-full relative circle 2xl:w-[12vw] 2xl:h-[12vw]"
-            >
-              <div
-                class="absolute top-1/2 left-1/2 w-[65px] h-[65px] bg-lightpurple shape md:w-[75px] md:h-[75px] 2xl:w-[5vw] 2xl:h-[5vw]"
-              ></div>
-              <div
-                class="absolute top-1/2 left-1/2 w-[75px] h-[75px] rounded-full bg-lightpurple shape md:w-[85px] md:h-[85px] 2xl:w-[5vw] 2xl:h-[5vw]"
-              ></div>
-              <div
-                class="absolute top-1/2 left-1/2 w-[70px] h-[70px] bg-lightpurple triangle shape md:w-[80px] md:h-[80px] 2xl:w-[5vw] 2xl:h-[5vw]"
-              ></div>
+        <div class="flex flex-col items-center gap-2 lg:grid lg:grid-cols-2 2xl:gap-[1vw]">
+            <div id="to-overview"
+                class="h-[400px] lg:[300px] w-full bg-blue rounded-[50px] p-8 flex flex-col justify-between shape-container relative overflow-hidden  2xl:h-[60vh] 2xl:rounded-[5vw] 2xl:p-[3vw]">
+                <div
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 flex text-6xl font-semibold capitalize z-10 marquee-container 2xl:text-[5vw]">
+                    <p class="whitespace-nowrap marquee1 mr-[30px] 2xl:mr-[100px]">
+                        Let's create the best digital experience!
+                    </p>
+                    <p class="whitespace-nowrap marquee1">
+                        Let's create the best digital experience!
+                    </p>
+                </div>
+                <div class="heading flex justify-between items-center">
+                    <h4 class="text-xl font-semibold 2xl:text-[2vw]">Vision</h4>
+                    <div
+                        class="bg-logo bg-center bg-no-repeat bg-cover w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full 2xl:w-[4vw] 2xl:h-[4vw]">
+                    </div>
+                </div>
+                <div class="main project-title flex items-center justify-center">
+                    <div class="w-[160px] h-[160px] rounded-full relative circle 2xl:w-[12vw] 2xl:h-[12vw]">
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[65px] h-[65px] bg-lightpurple shape md:w-[75px] md:h-[75px] 2xl:w-[5vw] 2xl:h-[5vw]">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[75px] h-[75px] rounded-full bg-lightpurple shape md:w-[85px] md:h-[85px] 2xl:w-[5vw] 2xl:h-[5vw]">
+                        </div>
+                        <div
+                            class="absolute top-1/2 left-1/2 w-[70px] h-[70px] bg-lightpurple triangle shape md:w-[80px] md:h-[80px] 2xl:w-[5vw] 2xl:h-[5vw]">
+                        </div>
+                    </div>
+                </div>
+                <div class="footer flex justify-between items-center text-lg 2xl:text-[1.5vw]">
+                    <p class="text-lg font-semibold 2xl:text-[1.5vw]">
+                        See our services
+                    </p>
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
             </div>
-          </div>
-          <div
-            class="footer flex justify-between items-center text-lg 2xl:text-[1.5vw]"
-          >
-            <p class="text-lg font-semibold 2xl:text-[1.5vw]">
-              See our services
-            </p>
-            <i class="fa-solid fa-arrow-down"></i>
-          </div>
+            <div class="w-full h-[300px] md:h-[400px] lg:h-full grid grid-rows-2 grid-cols-2 gap-0 rectangle-container">
+                <div id="to-work" class="rectangle w-full h-full pb-2 ">
+                    <div
+                        class="bg-white w-full h-full rounded-[50px] flex flex-col text-black p-8 md:p-9 relative overflow-hidden sub-rectangle 2xl:rounded-[5vw] 2xl:p-[2vw]">
+                        <div
+                            class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]">
+                            <p class="mr-[30px] marquee2 marquee opacity-0 2xl:mr-[100px]">
+                                Check out our showcase.
+                            </p>
+                            <p class="marquee2 marquee opacity-0">Check out our showcase.</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto font-semibold elements1 lg:text-lg 2xl:text-[1.2vw]">
+                            <span class="">Work</span>
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="to-about" class="rectangle w-full h-full pb-2 overflow-hidden ">
+                    <div
+                        class="bg-darkgrey rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 relative overflow-hidden h-full 2xl:rounded-[5vw] 2xl:p-[2vw]">
+                        <div
+                            class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]">
+                            <p class="mr-[30px] marquee4 marquee opacity-0 2xl:mr-[100px]">
+                                Learn more about us
+                            </p>
+                            <p class="marquee4 marquee opacity-0 mr-[30px] 2xl:mr-[100px]">
+                                Learn more about us
+                            </p>
+                            <p class="marquee4 marquee opacity-0">Learn more about us</p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto font-semibold elements2 lg:text-lg 2xl:text-[1.2vw]">
+                            <span class=" ">About us</span>
+                            <i class="fa-regular fa-address-card"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="to-contact" class="w-full h-full rectangle col-start-1 col-end-3 overflow-hidden ">
+                    <div
+                        class="bg-yellow h-full rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 text-black border-black border border-solid border-b-8 overflow-hidden relative 2xl:text-[3vw] 2xl:rounded-[5vw] 2xl:p-[2vw]">
+                        <div
+                            class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]">
+                            <p class="mr-[30px] marquee4 marquee opacity-0 2xl:mr-[100px]">
+                                Get in touch! Let's talk business.
+                            </p>
+                            <p class="marquee4 marquee opacity-0 mr-[30px] 2xl:mr-[100px]">
+                                Get in touch! Let's talk business.
+                            </p>
+                            <p class="marquee4 marquee opacity-0">
+                                Get in touch! Let's talk business.
+                            </p>
+                        </div>
+                        <div
+                            class="flex items-center justify-between mt-auto font-semibold elements3 lg:text-lg 2xl:text-[1.2vw]">
+                            <span class="2xl:text-[1.2vw]">Contact us</span>
+                            <i class="fa-regular fa-comment-dots"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div
-          class="w-full h-[300px] md:h-[400px] lg:h-full grid grid-rows-2 grid-cols-2 gap-0 rectangle-container"
-        >
-          <div id="to-work" class="rectangle w-full h-full pb-2 ">
-            <div
-              class="bg-white w-full h-full rounded-[50px] flex flex-col text-black p-8 md:p-9 relative overflow-hidden sub-rectangle 2xl:rounded-[5vw] 2xl:p-[2vw]"
-            >
-              <div
-                class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]"
-              >
-                <p class="mr-[30px] marquee2 marquee opacity-0 2xl:mr-[100px]">
-                  Check out my showcase.
-                </p>
-                <p class="marquee2 marquee opacity-0">Check out my showcase.</p>
-              </div>
-              <div
-                class="flex items-center justify-between mt-auto font-semibold elements1 lg:text-lg 2xl:text-[1.2vw]"
-              >
-                <span class="">Work</span>
-                <i class="fa-solid fa-code"></i>
-              </div>
-            </div>
-          </div>
-          <div
-            id="to-about"
-            class="rectangle w-full h-full pb-2 overflow-hidden "
-          >
-            <div
-              class="bg-darkgrey rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 relative overflow-hidden h-full 2xl:rounded-[5vw] 2xl:p-[2vw]"
-            >
-              <div
-                class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]"
-              >
-                <p class="mr-[30px] marquee4 marquee opacity-0 2xl:mr-[100px]">
-                  Learn more about us
-                </p>
-                <p class="marquee4 marquee opacity-0 mr-[30px] 2xl:mr-[100px]">
-                  Learn more about us
-                </p>
-                <p class="marquee4 marquee opacity-0">Learn more about us</p>
-              </div>
-              <div
-                class="flex items-center justify-between mt-auto font-semibold elements2 lg:text-lg 2xl:text-[1.2vw]"
-              >
-                <span class=" ">About us</span>
-                <i class="fa-regular fa-address-card"></i>
-              </div>
-            </div>
-          </div>
-          <div
-            id="to-contact"
-            class="w-full h-full rectangle col-start-1 col-end-3 overflow-hidden "
-          >
-            <div
-              class="bg-yellow h-full rounded-[50px] sub-rectangle flex flex-col p-8 md:p-9 text-black border-black border border-solid border-b-8 overflow-hidden relative 2xl:text-[3vw] 2xl:rounded-[5vw] 2xl:p-[2vw]"
-            >
-              <div
-                class="absolute top-1/2 left-0 -translate-y-1/2 capitalize font-semibold text-5xl whitespace-nowrap flex 2xl:text-[3vw]"
-              >
-                <p class="mr-[30px] marquee4 marquee opacity-0 2xl:mr-[100px]">
-                  Get in touch! Let's talk business.
-                </p>
-                <p class="marquee4 marquee opacity-0 mr-[30px] 2xl:mr-[100px]">
-                  Get in touch! Let's talk business.
-                </p>
-                <p class="marquee4 marquee opacity-0">
-                  Get in touch! Let's talk business.
-                </p>
-              </div>
-              <div
-                class="flex items-center justify-between mt-auto font-semibold elements3 lg:text-lg 2xl:text-[1.2vw]"
-              >
-                <span class="2xl:text-[1.2vw]">Contact us</span>
-                <i class="fa-regular fa-comment-dots"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
     <main class="mb-2">
-      <div
-        id="overview"
-        class="w-full text-purple bg-darkgrey rounded-[50px] p-8 md:p-10 md:pb-20 mb-2 2xl:p-[3vw] 2xl:pb-[10vh] 2xl:rounded-[5vw]"
-      >
-        <h4 class="text-xl mb-4 2xl:text-[2vw] 2xl:mb-[5vh]">What we do</h4>
-        <div class="flex justify-between lg:gap-40">
-          <p
-            class="paragraph text-2xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[5.5vw] pr-4]"
-          >
-            We offer clients exceptionally <i>crafted</i> web solutions,
-            meticulously developed with expertise and dedication.
-          </p>
-          <div class="flex">
-            <div class="relative self-end hidden lg:block">
-              <div
-                class="w-[100px] h-[100px] 2xl:w-[7vw] 2xl:h-[7vw] rounded-full words-circle"
-              ></div>
-              <i
-                class="fa-solid fa-arrow-down absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl 2xl:text-[2vw]"
-              ></i>
+        <div id="overview"
+            class="w-full text-purple bg-darkgrey rounded-[50px] p-8 md:p-10 md:pb-20 mb-2 2xl:p-[3vw] 2xl:pb-[10vh] 2xl:rounded-[5vw]">
+            <h4 class="text-xl mb-4 2xl:text-[2vw] 2xl:mb-[5vh]">What we do</h4>
+            <div class="flex justify-between lg:gap-40">
+                <p class="paragraph text-2xl sm:text-4xl md:text-5xl lg:text-6xl 2xl:text-[5.5vw] pr-4]">
+                    We offer clients exceptionally <i>crafted</i> web solutions,
+                    meticulously developed with expertise and dedication.
+                </p>
+                <div class="flex">
+                    <div class="relative self-end hidden lg:block">
+                        <div class="w-[100px] h-[100px] 2xl:w-[7vw] 2xl:h-[7vw] rounded-full words-circle"></div>
+                        <i
+                            class="fa-solid fa-arrow-down absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-2xl 2xl:text-[2vw]"></i>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <div class="skillset overflow-hidden lg:mb-2 2xl:mb-[1vw]">
-        <div class="relative">
-          <div
-            class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 lg:w-[50%] md:text-xl md:pr-[15%] lg:p-10 lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]"
-          >
-            <div>01</div>
-            <div>
-              <h4
-                class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]"
-              >
-                Webflow CMS
-              </h4>
-              <p>
-                We build web solutions with Webflow CMS, an easy-to-use content
-                management system that lets admins alter or add content to their
-                websites.
-              </p>
+        <div class="skillset overflow-hidden lg:mb-2 2xl:mb-[1vw]">
+            <div class="relative">
+                <div
+                    class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 lg:w-[50%] md:text-xl md:pr-[15%] lg:p-10 lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]">
+                    <div>01</div>
+                    <div>
+                        <h4 class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]">
+                            Webflow CMS
+                        </h4>
+                        <p>
+                            We build web solutions with Webflow CMS, an easy-to-use content
+                            management system that lets admins alter or add content to their
+                            websites.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]">
+                    <span>We are experts in</span>
+                    <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]">Webflow CMS</span>
+                </div>
             </div>
-          </div>
-          <div
-            class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]"
-          >
-            <span>We are experts in</span>
-            <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]"
-              >Webflow CMS</span
-            >
-          </div>
-        </div>
-        <div class="relative">
-          <div
-            class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]"
-          >
-            <div>02</div>
-            <div>
-              <h4
-                class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]"
-              >
-                SEO
-              </h4>
-              <p>
-                We use our expertise and handy tools to achieve high SEO scores,
-                which means your website will be more visible on search engines
-                like Google.
-              </p>
+            <div class="relative">
+                <div
+                    class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]">
+                    <div>02</div>
+                    <div>
+                        <h4 class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]">
+                            SEO
+                        </h4>
+                        <p>
+                            We use our expertise and handy tools to achieve high SEO scores,
+                            which means your website will be more visible on search engines
+                            like Google.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]">
+                    <span>With our SEO knowledge</span>
+                    <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]">You will be seen</span>
+                </div>
             </div>
-          </div>
-          <div
-            class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]"
-          >
-            <span>With our SEO knowledge</span>
-            <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]"
-              >You will be seen</span
-            >
-          </div>
-        </div>
-        <div class="relative">
-          <div
-            class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]"
-          >
-            <div>03</div>
-            <div>
-              <h4
-                class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]"
-              >
-                Fast Support
-              </h4>
-              <p>
-                We aim to be highly available and supportive to our clients.
-                Please feel free to contact us directly with any questions or
-                requests.
-              </p>
+            <div class="relative">
+                <div
+                    class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]">
+                    <div>03</div>
+                    <div>
+                        <h4 class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]">
+                            Fast Support
+                        </h4>
+                        <p>
+                            We aim to be highly available and supportive to our clients.
+                            Please feel free to contact us directly with any questions or
+                            requests.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]">
+                    <span>We are always </span>
+                    <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]">Happy to help</span>
+                </div>
             </div>
-          </div>
-          <div
-            class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]"
-          >
-            <span>We are always </span>
-            <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]"
-              >Happy to help</span
-            >
-          </div>
-        </div>
-        <div class="relative">
-          <div
-            class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]"
-          >
-            <div>04</div>
-            <div>
-              <h4
-                class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]"
-              >
-                Custom Designs
-              </h4>
-              <p>
-                Our design team excels at both customizing existing designs and
-                creating stunning, award-winning new designs.
-              </p>
+            <div class="relative">
+                <div
+                    class="flex items-center gap-10 p-10 text-purple bg-darkgrey rounded-[50px] mb-1 skill transform scale-75 opacity-0 lg:scale-100 lg:opacity-100 md:text-xl md:pr-[15%] lg:p-10 lg:w-[50%] lg:text-lg lg:translate-x-[50%] 2xl:text-[1.6vw] 2xl:leading-[2.2vw] 2xl:gap-[2vw] 2xl:p-[3vw] 2xl:rounded-[5vw]">
+                    <div>04</div>
+                    <div>
+                        <h4 class="text-lg text-semibold mb-4 2xl:text-[1vw] 2xl:mb-[3vh]">
+                            Custom Designs
+                        </h4>
+                        <p>
+                            Our design team excels at both customizing existing designs and
+                            creating stunning, award-winning new designs.
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]">
+                    <span>In partnership with </span>
+                    <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]">The best of the best</span>
+                </div>
             </div>
-          </div>
-          <div
-            class="gap-8 bg-purple p-10 text-black absolute right-1/2 top-0 w-[50%] h-full rounded-[50px] translate-x-1/2 skill-title hidden lg:flex flex-col items-center justify-center 2xl:text-[1.2vw] 2xl:gap-[3vh] 2xl:rounded-[5vw]"
-          >
-            <span>In partnership with </span>
-            <span class="text-4xl font-semibold italic 2xl:text-[2.5vw]"
-              >The best of the best</span
-            >
-          </div>
         </div>
-      </div>
-      <div
-        id="work"
-        class="showcase grid grid-cols-2 grid-rows-3 gap-2 mb-2 2xl:gap-[1vw] 2xl:mb-[2vw]"
-      >
-        <div
-          class="bg-portfolio lg:bg-portfolio-desktop bg-cover bg-center bg-no-repeat h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-white col-span-2 rounded-[50px] p-8 text-black flex flex-col justify-between project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw] relative"
-        >
-          <a
-            href="https://ayoubelbazzazi.vercel.app"
-            target="_blank"
-            class="absolute left-0 top-0 h-full w-full"
-          ></a>
-          <div
-            class="heading flex items-center justify-between text-xl font-semibold 2xl:text-[1.5vw]"
-          >
-            <span>01.</span>
-            <span>Portfolio</span>
-          </div>
-          <div class="flex items-center justify-center">
-            <!-- <span
+        <div id="work" class="showcase grid grid-cols-2 grid-rows-3 gap-2 mb-2 2xl:gap-[1vw] 2xl:mb-[2vw]">
+            <div
+                class="bg-portfolio lg:bg-portfolio-desktop bg-cover bg-center bg-no-repeat h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-white col-span-2 rounded-[50px] p-8 text-black flex flex-col justify-between project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw] relative">
+                <a href="https://ayoubelbazzazi.vercel.app" target="_blank"
+                    class="absolute left-0 top-0 h-full w-full"></a>
+                <div class="heading flex items-center justify-between text-xl font-semibold 2xl:text-[1.5vw]">
+                    <span>01.</span>
+                    <span>Portfolio</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <!-- <span
               class="self-center text-4xl font-semibold project-title 2xl:text-[3.5vw]"
               >Project 1</span
             > -->
-          </div>
-          <div
-            class="footing flex items-center justify-between text-xl font-semibold 2xl:text-[1.5vw]"
-          >
-            <span>Launch project</span>
-            <i class="fa-solid fa-arrow-right transform -rotate-45"></i>
-          </div>
-        </div>
-        <div
-          class="bg-project-1 lg:bg-project-1-desktop bg-cover bg-center bg-no-repeat h-[40vh] text-black transform scale-90 opacity-0 xs:h-[50vh] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw] relative"
-        >
-          <a
-            href="https://portfoliowebdesignone.netlify.app"
-            target="_blank"
-            class="absolute left-0 top-0 h-full w-full"
-          ></a>
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span>01.</span>
-            <span class="hidden xs:block">Showcase</span>
-          </div>
-          <div class="main project-title">
-            <!-- <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 2</span> -->
-          </div>
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span class="hidden xs:block">Launch project</span>
-            <i
-              class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"
-            ></i>
-          </div>
-        </div>
-        <div
-          class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[yellowgreen] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]"
-        >
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span>02.</span>
-            <span class="hidden xs:block">Showcase</span>
-          </div>
-          <div class="main project-title">
-            <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 3</span>
-          </div>
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span class="hidden xs:block">Launch project</span>
-            <i
-              class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"
-            ></i>
-          </div>
-        </div>
-        <div
-          class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[cyan] text-black rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]"
-        >
-          <div
-            class="heading xs:w-full font-semibold xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span>03.</span>
-            <span class="hidden xs:block">Showcase</span>
-          </div>
-          <div class="main project-title">
-            <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 4</span>
-          </div>
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span class="hidden xs:block">Launch project</span>
-            <i
-              class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"
-            ></i>
-          </div>
-        </div>
-        <div
-          class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[magenta] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]"
-        >
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span>04.</span>
-            <span class="hidden xs:block">Showcase</span>
-          </div>
-          <div class="main project-title">
-            <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 5</span>
-          </div>
-          <div
-            class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]"
-          >
-            <span class="hidden xs:block">Launch project</span>
-            <i
-              class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"
-            ></i>
-          </div>
-        </div>
-      </div>
-      <div
-        id="about"
-        class="about max-h-[650px] lg:max-h-[800px] bg-[#1F1A1C] rounded-[50px] py-10 text-[#FFAED8] relative overflow-hidden mb-2 2xl:max-h-none 2xl:h-[80vh]"
-      >
-        <div
-          class="flex text-8xl lg:text-[140px] overflow-hidden mb-10 lg:mb-20 2xl:text-[7vw] 2xl:mb-[10vh]"
-        >
-          <p class="whitespace-nowrap mr-[30px] marquee5 2xl:mr-[100px]">
-            Our team of experts
-          </p>
-          <p class="whitespace-nowrap mr-[30px] marquee5 2xl:mr-[100px]">
-            Our team of experts
-          </p>
-          <p class="whitespace-nowrap marquee5">Our team of experts</p>
-        </div>
-        <div
-          class="leading-6 sm:w-[60%] text-lg px-10 mb-32 lg:mb-32 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[1.8vw] 2xl:leading-[2.2vw] 2xl:px-[4vw]"
-        >
-          <p class="">
-            Webflow web developers with years of experience building custom
-            websites for companies worldwide.
-          </p>
-        </div>
-        <div>
-          <div class="grid grid-rows-2 transform -rotate-[20deg]">
-            <div class="flex gap-4 row row-1 transform mb-4 text-9xl">
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] bg-team-1 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] bg-team-2 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] bg-pink text-darkgrey flex items-center justify-center"
-              >
-                
-              </div>
-              <div
-                class="w-[140px] h-[140px] bg-team-3 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center"
-              >
-                
-              </div>
-              <div
-                class="w-[140px] h-[140px] bg-team-4 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center"
-              >
-                
-              </div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center"
-              >
-                
-              </div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center"
-              >
-                
-              </div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
+                </div>
+                <div class="footing flex items-center justify-between text-xl font-semibold 2xl:text-[1.5vw]">
+                    <span>Launch project</span>
+                    <i class="fa-solid fa-arrow-right transform -rotate-45"></i>
+                </div>
             </div>
-            <div class="flex gap-4 row row-2 transform">
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
-              <div
-                class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]"
-              ></div>
+            <div
+                class="bg-project-1 lg:bg-project-1-desktop bg-cover bg-center bg-no-repeat h-[40vh] text-black transform scale-90 opacity-0 xs:h-[50vh] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw] relative">
+                <a href="https://portfoliowebdesignone.netlify.app" target="_blank"
+                    class="absolute left-0 top-0 h-full w-full"></a>
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span>01.</span>
+                    <span class="hidden xs:block">Showcase</span>
+                </div>
+                <div class="main project-title">
+                    <!-- <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 2</span> -->
+                </div>
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span class="hidden xs:block">Launch project</span>
+                    <i class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"></i>
+                </div>
             </div>
-          </div>
+            <div
+                class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[yellowgreen] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]">
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span>02.</span>
+                    <span class="hidden xs:block">Showcase</span>
+                </div>
+                <div class="main project-title">
+                    <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 3</span>
+                </div>
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span class="hidden xs:block">Launch project</span>
+                    <i class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"></i>
+                </div>
+            </div>
+            <div
+                class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[cyan] text-black rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]">
+                <div class="heading xs:w-full font-semibold xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span>03.</span>
+                    <span class="hidden xs:block">Showcase</span>
+                </div>
+                <div class="main project-title">
+                    <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 4</span>
+                </div>
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span class="hidden xs:block">Launch project</span>
+                    <i class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"></i>
+                </div>
+            </div>
+            <div
+                class="h-[40vh] transform scale-90 opacity-0 xs:h-[50vh] bg-[magenta] rounded-[100px] xs:rounded-[50px] flex flex-col items-center justify-between p-8 project lg:scale-100 lg:opacity-100 2xl:rounded-[5vw] 2xl:p-[3vw]">
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span>04.</span>
+                    <span class="hidden xs:block">Showcase</span>
+                </div>
+                <div class="main project-title">
+                    <span class="text-2xl font-semibold 2xl:text-[2vw]">Project 5</span>
+                </div>
+                <div class="heading font-semibold xs:w-full xs:flex items-center justify-between 2xl:text-[1.5vw]">
+                    <span class="hidden xs:block">Launch project</span>
+                    <i class="fa-solid fa-arrow-right transform text-xl 2xl:text-[1.5vw] -rotate-45"></i>
+                </div>
+            </div>
         </div>
-      </div>
-      <div
-        id="contact"
-        class="contact bg-darkyellow text-yellow-2 p-10 rounded-[50px] mb-2 2xl:p-[2vw]"
-      >
-        <h4 class="mb-4 text-lg 2xl:text-[1.2vw] 2xl:mb-[2vw]">Get in touch</h4>
-        <h3
-          class="text-4xl mb-12 xs:text-5xl md:text-6xl lg:text-7xl lg:w-[70%] 2xl:text-[4vw] 2xl:mb-[4vw]"
-        >
-          How can we help you today?<br />Contact us!
-        </h3>
-        <div class="flex justify-between">
-          <div class="w-full sm:w-[70%] md:w-[60%] 2xl:w-[55%]">
-            <div class="flex flex-col lg:flex-row items-center mb-12 lg:gap-6">
-              <button
-                class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full mb-2 lg:mb-0 md:mb-4 font-semibold 2xl:text-[1.5vw] 2xl:p-[1vw]"
-              >
-                info@vision.com
-              </button>
-              <button
-                class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full font-semibold 2xl:text-[1.5vw] 2xl:p-[1vw]"
-              >
-                +212 511 22 33 44
-              </button>
+        <div id="about"
+            class="about max-h-[650px] lg:max-h-[800px] bg-[#1F1A1C] rounded-[50px] py-10 text-[#FFAED8] relative overflow-hidden mb-2 2xl:max-h-none 2xl:h-[80vh]">
+            <div class="flex text-8xl lg:text-[140px] overflow-hidden mb-10 lg:mb-20 2xl:text-[7vw] 2xl:mb-[10vh]">
+                <p class="whitespace-nowrap mr-[30px] marquee5 2xl:mr-[100px]">
+                    Our team of experts
+                </p>
+                <p class="whitespace-nowrap mr-[30px] marquee5 2xl:mr-[100px]">
+                    Our team of experts
+                </p>
+                <p class="whitespace-nowrap marquee5">Our team of experts</p>
             </div>
-            <div class="flex items-center justify-between text-xl gap-2">
-              <button
-                class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]"
-              >
-                <i class="fa-brands fa-facebook"></i>
-              </button>
-              <button
-                class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </button>
-              <button
-                class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-              </button>
+            <div
+                class="leading-6 sm:w-[60%] text-lg px-10 mb-32 lg:mb-32 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[1.8vw] 2xl:leading-[2.2vw] 2xl:px-[4vw]">
+                <p class="">
+                    Webflow web developers with years of experience building custom
+                    websites for companies worldwide.
+                </p>
             </div>
-          </div>
-          <!-- <div class="flex">
+            <div>
+                <div class="grid grid-rows-2 transform -rotate-[20deg]">
+                    <div class="flex gap-4 row row-1 transform mb-4 text-9xl">
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] bg-team-1 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] bg-team-2 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] bg-pink text-darkgrey flex items-center justify-center">
+
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] bg-team-3 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center">
+
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] bg-team-4 image-controls border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center">
+
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center">
+
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw] flex items-center justify-center">
+
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                    </div>
+                    <div class="flex gap-4 row row-2 transform">
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                        <div
+                            class="w-[140px] h-[140px] border-solid border-2 lg:border-4 border-pink rounded-full moving-circle md:w-[250px] md:h-[250px] lg:w-[280px] lg:h-[280px] 2xl:w-[15vw] 2xl:h-[15vw] 2xl:text-[10vw] 2xl:border-[.2vw]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="contact bg-darkyellow text-yellow-2 p-10 rounded-[50px] mb-2 2xl:p-[2vw]">
+            <h4 class="mb-4 text-lg 2xl:text-[1.2vw] 2xl:mb-[2vw]">Get in touch</h4>
+            <h3 class="text-4xl mb-12 xs:text-5xl md:text-6xl lg:text-7xl lg:w-[70%] 2xl:text-[4vw] 2xl:mb-[4vw]">
+                How can we help you today?<br />Contact us!
+            </h3>
+            <div class="flex justify-between">
+                <div class="w-full sm:w-[70%] md:w-[60%] 2xl:w-[55%]">
+                    <div class="flex flex-col lg:flex-row items-center mb-12 lg:gap-6">
+                        <button
+                            class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full mb-2 lg:mb-0 md:mb-4 font-semibold 2xl:text-[1.5vw] 2xl:p-[1vw]">
+                            info@vision.com
+                        </button>
+                        <button
+                            class="text-lg lg:text-2xl w-full border-2 border-solid border-yellow-2 p-2 rounded-full font-semibold 2xl:text-[1.5vw] 2xl:p-[1vw]">
+                            +212 511 22 33 44
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between text-xl gap-2">
+                        <button
+                            class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]">
+                            <i class="fa-brands fa-facebook"></i>
+                        </button>
+                        <button
+                            class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]">
+                            <i class="fa-brands fa-instagram"></i>
+                        </button>
+                        <button
+                            class="border-2 border-solid border-yellow-2 rounded-full w-full py-2 2xl:text-[1.5vw] 2xl:p-[1vw]">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="flex">
             <div class="relative self-end hidden lg:block">
               <div
                 class="w-[100px] h-[100px] 2xl:w-[7vw] 2xl:h-[7vw] rounded-full words-circle-2"
@@ -703,76 +537,53 @@
               ></i>
             </div>
           </div> -->
+            </div>
         </div>
-      </div>
-      <div class="2xl:mb-[5vh]">
-        <form
-          method="GET"
-          class="w-full lg:flex justify-between gap-3 2xl:gap-[1vw]"
-        >
-          <div class="lg:w-[70%]">
-            <div class="lg:grid grid-cols-3 lg:gap-3">
-              <div
-                class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]"
-              >
-                <input
-                  type="text"
-                  placeholder="Name"
-                  class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.1vw]"
-                />
-              </div>
-              <div
-                class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]"
-              >
-                <input
-                  type="text"
-                  placeholder="Email"
-                  class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.2vw]"
-                />
-              </div>
-              <div
-                class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]"
-              >
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.2vw]"
-                />
-              </div>
-            </div>
-            <div
-              class="h-[400px] rounded-[50px] bg-darkyellow mb-2 2xl:p-[1.5vw] 2xl:h-[50vh]"
-            >
-              <textarea
-                class="w-full h-full bg-transparent focus:outline-none text-yellow-2 p-10 font-semibold placeholder-yellow-2 placeholder:font-semibold lg:text-xl resize-none 2xl:text-[1.2vw]"
-                placeholder="Message"
-              ></textarea>
-            </div>
-          </div>
-          <button
-            class="w-full lg:w-[30%] h-[120px] lg:h-[500px] flex items-center justify-center text-darkyellow rounded-[50px] bg-yellow-2 text-xl font-semibold 2xl:text-[1.2vw] 2xl:h-[58vh]"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
+        <div class="2xl:mb-[5vh]">
+            <form method="GET" class="w-full lg:flex justify-between gap-3 2xl:gap-[1vw]">
+                <div class="lg:w-[70%]">
+                    <div class="lg:grid grid-cols-3 lg:gap-3">
+                        <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]">
+                            <input type="text" placeholder="Name"
+                                class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.1vw]" />
+                        </div>
+                        <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]">
+                            <input type="text" placeholder="Email"
+                                class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.2vw]" />
+                        </div>
+                        <div class="h-[90px] rounded-[50px] bg-darkyellow mb-2 2xl:h-fit 2xl:p-[1.5vw]">
+                            <input type="text" placeholder="Subject"
+                                class="w-full h-full px-10 bg-transparent text-yellow-2 focus:outline-none placeholder-yellow-2 placeholder:font-semibold font-semibold lg:text-xl 2xl:text-[1.2vw]" />
+                        </div>
+                    </div>
+                    <div class="h-[400px] rounded-[50px] bg-darkyellow mb-2 2xl:p-[1.5vw] 2xl:h-[50vh]">
+                        <textarea
+                            class="w-full h-full bg-transparent focus:outline-none text-yellow-2 p-10 font-semibold placeholder-yellow-2 placeholder:font-semibold lg:text-xl resize-none 2xl:text-[1.2vw]"
+                            placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <button
+                    class="w-full lg:w-[30%] h-[120px] lg:h-[500px] flex items-center justify-center text-darkyellow rounded-[50px] bg-yellow-2 text-xl font-semibold 2xl:text-[1.2vw] 2xl:h-[58vh]">
+                    Submit
+                </button>
+            </form>
+        </div>
     </main>
     <footer
-      class="p-10 bg-transparent flex flex-col items-center gap-4 md:flex-row md:justify-between lg:gap-0 2xl:p-[2vw]"
-    >
-      <!-- <div class="text-2xl font-bold 2xl:text-[2vw]">A</div> -->
-      <div
-        id="logo"
-        class="bg-logo bg-center bg-no-repeat bg-cover w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full 2xl:w-[4vw] 2xl:h-[4vw]"
-      ></div>
-      <div>
-        <p class="font-semibold lg:text-xl 2xl:text-[1.4vw]">
-          Copyright @ 2023 El Bazzazi
-        </p>
-      </div>
-      <div class="hidden md:block">
-        <p class="font-semibold lg:text-xl 2xl:text-[1.4vw]">Vision</p>
-      </div>
+        class="p-10 bg-transparent flex flex-col items-center gap-4 md:flex-row md:justify-between lg:gap-0 2xl:p-[2vw]">
+        <!-- <div class="text-2xl font-bold 2xl:text-[2vw]">A</div> -->
+        <div id="logo"
+            class="bg-logo bg-center bg-no-repeat bg-cover w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] rounded-full 2xl:w-[4vw] 2xl:h-[4vw]">
+        </div>
+        <div>
+            <p class="font-semibold lg:text-xl 2xl:text-[1.4vw]">
+                Copyright @ 2023 El Bazzazi
+            </p>
+        </div>
+        <div class="hidden md:block">
+            <p class="font-semibold lg:text-xl 2xl:text-[1.4vw]">Vision</p>
+        </div>
     </footer>
-  </body>
+</body>
+
 </html>
